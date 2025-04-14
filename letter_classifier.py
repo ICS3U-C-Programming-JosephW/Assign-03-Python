@@ -51,7 +51,7 @@ def main():
         # Get the user's choice of displaying a 
         # phonetic symbol for their desired letter.
         show_phonetic_symbol_str = input("\nDo you want a phonetic symbol to be "
-        "displayed for the sound your letter makes?\n Enter 0 for no or 1 for yes: ")
+        "displayed for the sound your letter makes?\nEnter 0 for no or 1 for yes: ")
 
         # Try to validate and proceed with the 
         # user's choice for a phonetic symbol.
@@ -69,7 +69,7 @@ def main():
                     # phonetic symbol for their desired letter.
                     show_phonetic_example_str = input("\nDo you want a phonetic "
                     "word to be displayed for an example relating to your chosen "
-                    "letter?\n Enter 0 for no or 1 for yes: ")
+                    "letter?\nEnter 0 for no or 1 for yes: ")
                     
                     # Try to validate and proceed with the 
                     # user's choice for a phonetic example. 
@@ -98,6 +98,8 @@ def main():
                         # a valid integer for the example choice.
                         print(f"{show_phonetic_example_str} is not a valid integer. "
                         "Please enter a valid integer.")
+                # Break the outer infinite while loop.
+                break
             # Otherwise, the user entered an integer out of range
             # for the symbol choices.
             else:
@@ -105,10 +107,21 @@ def main():
                 # or 1 for yes for the phonetic symbol.
                 print(f"{show_phonetic_symbol_int} is out of range for choices. "
                 "Please enter either 0 for no or 1 for yes.")
+        # Runs if int() could not convert the user's string 
+        # input into an integer for the symbol choice.
         except ValueError:
-            # Runs if int() could not convert the user's string 
-            # input into an integer for the example choice.
-            pass
+            # Display to the user that they need to enter
+            # a valid integer for the symbol choice.
+            print(f"{show_phonetic_symbol_str} is not a valid integer. " 
+            "Please enter a valid integer.")
+
+    # Determine the place of the lowercase chosen letter in the 
+    # English alphabet by finding its index in the array of English
+    # letters and adding it by 1.
+    letter_place = constants.ENGLISH_LETTERS.index(user_letter) + 1
+
+    # ...
+    
 
                     
     
