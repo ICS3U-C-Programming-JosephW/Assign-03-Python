@@ -139,15 +139,58 @@ def main():
     # Match the user's chosen letter in lowercase with cases 
     # to determine if it is a consonant, vowel, or semivowel.
     match user_letter.lower():
-        # This case is ran when the lowercase user
-        # letter is any of the consonants in the alphabet 
-        # and the user display type is simple.
+        # The consonant case when the user display type in lowercase is simple.
         case ('b' | 'c' | 'd' | 'f' | 'g' | 'h' | 'j' | 'k' 
-            | 'l' | 'm' | 'n' | 'p' | 'q' | 'r' | 's' | 't' 
-            | 'v' | 'x' | 'z') if user_display_type == "simple":
+        | 'l' | 'm' | 'n' | 'p' | 'q' | 'r' | 's' | 't' 
+        | 'v' | 'x' | 'z') if user_display_type.lower() == "simple":
+            # Display to the user that their 
+            # letter in uppercase is a consonant.
+            print(f"The letter {user_letter.upper()} is a consonant.")
 
-            # ...
-            pass
+        # The consonant case when the user display type in lowercase is complex.
+        case ('b' | 'c' | 'd' | 'f' | 'g' | 'h' | 'j' | 'k' 
+        | 'l' | 'm' | 'n' | 'p' | 'q' | 'r' | 's' | 't' 
+        | 'v' | 'x' | 'z') if user_display_type.lower() == "complex":
+            # Display to the user that their letter in uppercase
+            # is a consonant with more information.
+            print(f"The letter {user_letter.upper()}, the {letter_place}"
+            f"{letter_place_suffix} letter of the English alphabet, "
+            "is a consonant. Consonants are speech sounds made with "
+            "some or complete closure of the vocal tract.")
+
+        # The vowel case when the user display type in lowercase is simple.
+        case ('a' | 'e' | 'i' | 'o' | 'u') if user_display_type.lower() == "simple":
+            # Display to the user that their 
+            # letter in uppercase is a vowel.
+            print(f"The letter {user_letter.upper()} is a vowel.")
+
+        # The vowel case when the user display type in lowercase is complex.
+        case ('a' | 'e' | 'i' | 'o' | 'u') if user_display_type.lower() == "complex":
+            # Display to the user that their letter in 
+            # uppercase is a vowel with more information.
+            print(f"The letter {user_letter.upper()}, the {letter_place}"
+            f"{letter_place_suffix} letter of the English alphabet, "
+            "is a vowel. Vowels are speech sounds made with "
+            "little to no closure of the vocal tract.")
+
+        # The semivowel case when the user display type in lowercase is simple.
+        case ('w' | 'y') if user_display_type == "simple":
+            # Display to the user that their 
+            # letter in uppercase is a semivowel.
+            print(f"The letter {user_letter.upper()} is a semivowel.")
+        
+        # The semivowel case when the user display type in lowercase is complex.
+        case ('w' | 'y') if user_display_type == "simple":
+            # Display to the user that their letter in 
+            # uppercase is a semivowel with more information.
+            print(f"The letter {user_letter.upper()}, the {letter_place}"
+            f"{letter_place_suffix} letter of the English alphabet, "
+            "is a semivowel. Semivowels are special speech sounds that "
+            "share some characteristics of a vowel and a consonant.")
+
+    
+
+
     
 # Check if the special name of the file is __main__.
 if __name__ == "__main__":
