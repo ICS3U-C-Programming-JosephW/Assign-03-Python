@@ -14,7 +14,7 @@ def main():
     # Construct an infinite while loop for the letter input.
     while True:
         # Get the desired letter from the user.
-        user_letter = input("Enter a letter from a-z or A-Z: ")
+        user_letter = input("Enter a letter from a-z or A-Z: \n")
 
         # Checks if the lowercase letter entered is a 
         # letter of the English alphabet.
@@ -32,7 +32,7 @@ def main():
     while True:
         # Get the desired display type from the user.
         user_display_type = input("\nEnter a display type for the letter "
-        "(simple = straightforward answer, complex = sophisticated answer): ")
+        "(simple = straightforward answer, complex = sophisticated answer): \n")
 
         # Check if simple or complex was the entered display type.
         if ((user_display_type.lower() == "simple") 
@@ -70,7 +70,6 @@ def main():
                     show_phonetic_example_str = input("\nDo you want a phonetic "
                     "word to be displayed for an example relating to your chosen "
                     "letter?\nEnter 0 for no or 1 for yes: ")
-                    
                     # Try to validate and proceed with the 
                     # user's choice for a phonetic example. 
                     try:
@@ -120,10 +119,22 @@ def main():
     # letters and adding it by 1.
     letter_place = constants.ENGLISH_LETTERS.index(user_letter) + 1
 
-    # ...
-    
-
-                    
+    # Check if the letter place ends in 1 and does not end in 11.
+    if ((letter_place % 10 == 1) and (letter_place % 100 != 11)):
+        # Set the letter place to "st."
+        letter_place_suffix = "st"
+    # Otherwise, check if the letter place ends in 2 and does not end in 12.
+    elif ((letter_place % 10 == 2) and (letter_place % 100 != 12)):
+        # Set the letter place to "nd."
+        letter_place_suffix = "nd"
+    # Otherwise, check if the letter place ends in 3 and does not end in 13.
+    elif ((letter_place % 10 == 3) and (letter_place % 100 != 13)):
+        # Set the letter place to "rd."
+        letter_place_suffix = "rd"
+    # Otherwise, it has to be "th." That is the only other suffix.
+    else:
+        # Set the letter place to "th."
+        letter_place_suffix = "th"                   
     
 # Check if the special name of the file is __main__.
 if __name__ == "__main__":
