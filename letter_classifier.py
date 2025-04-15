@@ -134,7 +134,20 @@ def main():
     # Otherwise, it has to be "th." That is the only other suffix.
     else:
         # Set the letter place to "th."
-        letter_place_suffix = "th"                   
+        letter_place_suffix = "th"
+
+    # Match the user's chosen letter in lowercase with cases 
+    # to determine if it is a consonant, vowel, or semivowel.
+    match user_letter.lower():
+        # This case is ran when the lowercase user
+        # letter is any of the consonants in the alphabet 
+        # and the user display type is simple.
+        case ('b' | 'c' | 'd' | 'f' | 'g' | 'h' | 'j' | 'k' 
+            | 'l' | 'm' | 'n' | 'p' | 'q' | 'r' | 's' | 't' 
+            | 'v' | 'x' | 'z') if user_display_type == "simple":
+
+            # ...
+            pass
     
 # Check if the special name of the file is __main__.
 if __name__ == "__main__":
