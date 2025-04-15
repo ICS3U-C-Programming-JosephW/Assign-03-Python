@@ -117,7 +117,7 @@ def main():
     # Determine the place of the lowercase chosen letter in the 
     # English alphabet by finding its index in the array of English
     # letters and adding it by 1.
-    letter_place = constants.ENGLISH_LETTERS.index(user_letter) + 1
+    letter_place = constants.ENGLISH_LETTERS.index(user_letter.lower()) + 1
 
     # Check if the letter place ends in 1 and does not end in 11.
     if ((letter_place % 10 == 1) and (letter_place % 100 != 11)):
@@ -188,10 +188,36 @@ def main():
             "is a semivowel. Semivowels are special speech sounds that "
             "share some characteristics of a vowel and a consonant.")
 
-    
+    # Set the corresponding index to the place of the letter
+    # subtracted by one to revert back to array indexes.
+    corresponding_index = letter_place - 1
 
+    # Check if the user wanted a phonetic symbol 
+    # to be displayed based on the letter.
+    if show_phonetic_symbol_int == 1:
+        # Set the corresponding symbol to the corresponding index
+        # of the phonetic symbol array.
+        corresponding_phonetic_symbol = constants.PHONETIC_SYMBOLS[corresponding_index]
 
+        # Display to the user the phonetic symbol for the letter when said alone.
+        print(f"The phonetic notation for the letter {user_letter.upper()} " 
+        f"when said in isolation is {corresponding_phonetic_symbol}.")
     
+    # Check if the user wanted a phonetic example 
+    # word to be displayed based on the letter.
+    if show_phonetic_example_int == 1:
+        # Set the corresponding symbol to the corresponding index
+        # of the example words array.
+        corresponding_example_word = constants.EXAMPLE_WORDS[corresponding_index]
+
+        # Display to the user a word that uses 
+        # the letter they chose in uppercase.
+        print("One example of a word that uses the letter "
+        f"{user_letter.upper()} is {corresponding_example_word}.")
+
+    # Finally, thank the user for using this program.
+    print("Thanks for using this program!") 
+
 # Check if the special name of the file is __main__.
 if __name__ == "__main__":
     # Run the main function if so.
