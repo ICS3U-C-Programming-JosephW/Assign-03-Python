@@ -3,7 +3,7 @@
 # Date: Apr. 14, 2025
 # This module contains constants.
 
-# For input error detections.
+# For input error detections and displaying information.
 ENGLISH_LETTERS = [
     "a",
     "b",
