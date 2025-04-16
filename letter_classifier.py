@@ -161,7 +161,7 @@ Please enter a valid integer.{constants.WHITE}"""
     # Match the user's chosen letter in lowercase with cases
     # to determine if it is a consonant, vowel, or semivowel.
     match user_letter.lower():
-        # The consonant case when the user display type in lowercase is simple.
+        # The consonant case when the user display type in lowercase is "simple."
         case (
             "b"
             | "c"
@@ -189,7 +189,7 @@ Please enter a valid integer.{constants.WHITE}"""
                 f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a consonant.{constants.WHITE}"
             )
 
-        # The consonant case when the user display type in lowercase is complex.
+        # The consonant case when the user display type in lowercase is "complex."
         case (
             "b"
             | "c"
@@ -218,7 +218,7 @@ Please enter a valid integer.{constants.WHITE}"""
 Consonants are speech sounds made with some or complete closure of the vocal tract.{constants.WHITE}"""
             )
 
-        # The vowel case when the user display type in lowercase is simple.
+        # The vowel case when the user display type in lowercase is "simple."
         case "a" | "e" | "i" | "o" | "u" if user_display_type.lower() == "simple":
             # Display to the user that their
             # letter in uppercase is a vowel.
@@ -226,7 +226,7 @@ Consonants are speech sounds made with some or complete closure of the vocal tra
                 f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a vowel.{constants.WHITE}"
             )
 
-        # The vowel case when the user display type in lowercase is complex.
+        # The vowel case when the user display type in lowercase is "complex."
         case "a" | "e" | "i" | "o" | "u" if user_display_type.lower() == "complex":
             # Display to the user that their letter in
             # uppercase is a vowel with more information.
@@ -235,7 +235,7 @@ Consonants are speech sounds made with some or complete closure of the vocal tra
 Vowels are speech sounds made with little to no closure of the vocal tract.{constants.WHITE}"""
             )
 
-        # The semivowel case when the user display type in lowercase is simple.
+        # The semivowel case when the user display type in lowercase is "simple."
         case "w" | "y" if user_display_type.lower() == "simple":
             # Display to the user that their
             # letter in uppercase is a semivowel.
@@ -243,7 +243,7 @@ Vowels are speech sounds made with little to no closure of the vocal tract.{cons
                 f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a semivowel.{constants.WHITE}"
             )
 
-        # The semivowel case when the user display type in lowercase is complex.
+        # The semivowel case when the user display type in lowercase is "complex."
         case "w" | "y" if user_display_type.lower() == "complex":
             # Display to the user that their letter in
             # uppercase is a semivowel with more information.
