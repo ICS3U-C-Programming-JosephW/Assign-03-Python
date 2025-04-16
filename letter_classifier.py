@@ -15,9 +15,9 @@ import constants
 def main():
     # Display a greeting message to the user.
     print(
-        f"""{constants.LIGHT_PURPLE}Hello, user! This is a program designed to determine 
-whether an entered letter from the English alphabet is a consonant, vowel, or 
-semivowel, with extra examples and modes for more information."""
+        f"""\n{constants.LIGHT_PURPLE}Hello, user! This is a program designed to determine whether an entered 
+letter from the English alphabet is a consonant, vowel, or 
+semivowel, with extra examples and modes for more information.{constants.WHITE}\n"""
     )
 
     # Construct an infinite while loop for the letter input.
