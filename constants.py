@@ -30,7 +30,7 @@ ENGLISH_LETTERS = [
     "w",
     "x",
     "y",
-    "z"
+    "z",
 ]
 PHONETIC_SYMBOLS = [
     "/ˈeɪ/",
@@ -58,7 +58,7 @@ PHONETIC_SYMBOLS = [
     "/ˈdʌb.əlˈjuː/",
     "/ˈɛks/",
     "/ˈwaɪ/",
-    "/ˈziː/ or /ˈzɛd/"
+    "/ˈziː/ or /ˈzɛd/",
 ]
 EXAMPLE_WORDS = [
     "ate",
@@ -86,7 +86,7 @@ EXAMPLE_WORDS = [
     "well",
     "xylophone",
     "yarn",
-    "zebra"
+    "zebra",
 ]
 
 # For text escape codes.
