@@ -7,12 +7,19 @@
 # information about a particular letter by displaying
 # phonetic symbols and examples if desired.
 
-# Import the constants module to use constants for error checking.
+# Import the constants module for useful constants.
 import constants
 
 
 # Define the main function.
 def main():
+    # Display a greeting message to the user.
+    print(
+        f"""{constants.LIGHT_PURPLE}Hello, user! This is a program designed to determine 
+whether an entered letter from the English alphabet is a consonant, vowel, or 
+semivowel, with extra examples and modes for more information."""
+    )
+
     # Construct an infinite while loop for the letter input.
     while True:
         # Get the desired letter from the user.
