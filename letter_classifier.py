@@ -7,7 +7,7 @@
 # information about a particular letter by displaying
 # phonetic symbols and examples if desired.
 
-# Import the constants module to use constants.
+# Import the constants module to use constants for error checking.
 import constants
 
 
@@ -42,8 +42,8 @@ Please enter a letter from a-z or A-Z.{constants.WHITE}\n"""
 Choices are "simple" (less detailed answer), and "complex" (more detailed answer):{constants.WHITE}\n"""
         )
 
-        # Check if the lowercase form of simple
-        # or complex was the entered display type.
+        # Check if the lowercase form of "simple"
+        # or "complex" was the entered display type.
         if (user_display_type.lower() == "simple") or (
             user_display_type.lower() == "complex"
         ):
@@ -185,7 +185,9 @@ Please enter a valid integer.{constants.WHITE}"""
         ) if (user_display_type.lower() == "simple"):
             # Display to the user that their
             # letter in uppercase is a consonant.
-            print(f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a consonant.{constants.WHITE}")
+            print(
+                f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a consonant.{constants.WHITE}"
+            )
 
         # The consonant case when the user display type in lowercase is complex.
         case (
@@ -212,38 +214,42 @@ Please enter a valid integer.{constants.WHITE}"""
             # Display to the user that their letter in uppercase
             # is a consonant with more information.
             print(
-                f"""\n{constants.BROWN}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, 
-is a consonant. Consonants are speech sounds made with some or complete closure of the vocal tract.{constants.WHITE}"""
+                f"""\n{constants.BOLD}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, is a consonant.
+Consonants are speech sounds made with some or complete closure of the vocal tract.{constants.WHITE}"""
             )
 
         # The vowel case when the user display type in lowercase is simple.
         case "a" | "e" | "i" | "o" | "u" if user_display_type.lower() == "simple":
             # Display to the user that their
             # letter in uppercase is a vowel.
-            print(f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a vowel.{constants.WHITE}")
+            print(
+                f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a vowel.{constants.WHITE}"
+            )
 
         # The vowel case when the user display type in lowercase is complex.
         case "a" | "e" | "i" | "o" | "u" if user_display_type.lower() == "complex":
             # Display to the user that their letter in
             # uppercase is a vowel with more information.
             print(
-                f"""\n{constants.BROWN}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet,
-                is a vowel. Vowels are speech sounds made with little to no closure of the vocal tract.{constants.WHITE}"""
+                f"""\n{constants.BOLD}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, is a vowel.
+Vowels are speech sounds made with little to no closure of the vocal tract.{constants.WHITE}"""
             )
 
         # The semivowel case when the user display type in lowercase is simple.
         case "w" | "y" if user_display_type.lower() == "simple":
             # Display to the user that their
             # letter in uppercase is a semivowel.
-            print(f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a semivowel.{constants.WHITE}")
+            print(
+                f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a semivowel.{constants.WHITE}"
+            )
 
         # The semivowel case when the user display type in lowercase is complex.
         case "w" | "y" if user_display_type.lower() == "complex":
             # Display to the user that their letter in
             # uppercase is a semivowel with more information.
             print(
-                f"""\n{constants.BROWN}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, "
-                "is a semivowel. Semivowels are special speech sounds that share some characteristics of a vowel and a consonant.{constants.WHITE}"""
+                f"""\n{constants.BOLD}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, is a semivowel.
+Semivowels are special speech sounds that share some characteristics of a vowel and a consonant.{constants.WHITE}"""
             )
 
     # Set the corresponding index to the place of the letter
@@ -259,8 +265,7 @@ is a consonant. Consonants are speech sounds made with some or complete closure 
 
         # Display to the user the phonetic symbol for the letter when said alone.
         print(
-            f"""\n{constants.LIGHT_CYAN}The phonetic notation for the letter {user_letter.upper()} "
-when said in isolation is {corresponding_phonetic_symbol}.{constants.WHITE}"""
+            f"""\n{constants.LIGHT_CYAN}The phonetic notation for the letter {user_letter.upper()} when said in isolation is {corresponding_phonetic_symbol}.{constants.WHITE}"""
         )
 
     # Check if the user wanted a phonetic example
@@ -273,7 +278,7 @@ when said in isolation is {corresponding_phonetic_symbol}.{constants.WHITE}"""
         # Display to the user a word that uses
         # the letter they chose in uppercase.
         print(
-            f"""\n{constants.LIGHT_CYAN}One example of a word that uses the letter {user_letter.upper()} is {corresponding_example_word}.{constants.WHITE}"""
+            f"""\n{constants.DARK_GRAY}One example of a word that uses the letter {user_letter.upper()} is {corresponding_example_word}.{constants.WHITE}"""
         )
 
     # Finally, thank the user for using this program.
