@@ -80,7 +80,8 @@ Choices are "0" for no and "1" for yes:{constants.WHITE}\n"""
             # Attempt to convert the entered string into an integer.
             show_phonetic_symbol_int = int(show_phonetic_symbol_str)
 
-            # Check if the user entered 0 for no or 1 for yes.
+            # Check if the user entered 0 for no 
+            # or 1 for yes for the phonetic symbol.
             if (show_phonetic_symbol_int == 0) or (show_phonetic_symbol_int == 1):
                 # Construct a nested infinite while loop
                 # for the phonetic example choice input.
