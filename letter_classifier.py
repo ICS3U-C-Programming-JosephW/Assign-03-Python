@@ -71,7 +71,7 @@ Please enter either simple or complex for the display type.{constants.WHITE}"""
         # phonetic symbol for their desired letter.
         show_phonetic_symbol_str = input(
             f"""\n{constants.LIGHT_YELLOW}Do you want a phonetic symbol to be displayed for the sound your letter makes?
-Choices are "0" for no and "1" for yes:{constants.WHITE}\n"""
+Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
         )
 
         # Try to validate and proceed with the
@@ -80,7 +80,7 @@ Choices are "0" for no and "1" for yes:{constants.WHITE}\n"""
             # Attempt to convert the entered string into an integer.
             show_phonetic_symbol_int = int(show_phonetic_symbol_str)
 
-            # Check if the user entered 0 for no 
+            # Check if the user entered 0 for no
             # or 1 for yes for the phonetic symbol.
             if (show_phonetic_symbol_int == 0) or (show_phonetic_symbol_int == 1):
                 # Construct a nested infinite while loop
@@ -90,7 +90,7 @@ Choices are "0" for no and "1" for yes:{constants.WHITE}\n"""
                     # phonetic word for their letter.
                     show_phonetic_example_str = input(
                         f"""\n{constants.LIGHT_BLUE}Do you want a phonetic word to be displayed as an example relating to your chosen letter?
-Enter 0 for no or 1 for yes:{constants.WHITE}\n"""
+Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
                     )
                     # Try to validate and proceed with the
                     # user's choice for a phonetic example.
@@ -151,80 +151,25 @@ Please enter a valid integer.{constants.WHITE}"""
 
     # Check if the letter place ends in 1 and does not end in 11.
     if (letter_place % 10 == 1) and (letter_place % 100 != 11):
-        # Set the letter place to "st."
+        # Set the letter place suffix to "st."
         letter_place_suffix = "st"
     # Otherwise, check if the letter place ends in 2 and does not end in 12.
     elif (letter_place % 10 == 2) and (letter_place % 100 != 12):
-        # Set the letter place to "nd."
+        # Set the letter place suffix to "nd."
         letter_place_suffix = "nd"
     # Otherwise, check if the letter place ends in 3 and does not end in 13.
     elif (letter_place % 10 == 3) and (letter_place % 100 != 13):
-        # Set the letter place to "rd."
+        # Set the letter place suffix to "rd."
         letter_place_suffix = "rd"
     # Otherwise, it has to be "th." That is the only other suffix.
     else:
-        # Set the letter place to "th."
+        # Set the letter place suffix to "th."
         letter_place_suffix = "th"
 
     # Match the user's chosen letter in lowercase with cases
-    # to determine if it is a consonant, vowel, or semivowel.
+    # to determine if it is a consonant, vowel, or semivowel,
+    # along with the user's display type.
     match user_letter.lower():
-        # The consonant case when the user display type in lowercase is "simple."
-        case (
-            "b"
-            | "c"
-            | "d"
-            | "f"
-            | "g"
-            | "h"
-            | "j"
-            | "k"
-            | "l"
-            | "m"
-            | "n"
-            | "p"
-            | "q"
-            | "r"
-            | "s"
-            | "t"
-            | "v"
-            | "x"
-            | "z"
-        ) if (user_display_type.lower() == "simple"):
-            # Display to the user that their
-            # letter in uppercase is a consonant.
-            print(
-                f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a consonant.{constants.WHITE}"
-            )
-
-        # The consonant case when the user display type in lowercase is "complex."
-        case (
-            "b"
-            | "c"
-            | "d"
-            | "f"
-            | "g"
-            | "h"
-            | "j"
-            | "k"
-            | "l"
-            | "m"
-            | "n"
-            | "p"
-            | "q"
-            | "r"
-            | "s"
-            | "t"
-            | "v"
-            | "x"
-            | "z"
-        ) if (user_display_type.lower() == "complex"):
-            # Display to the user that their letter in uppercase
-            # is a consonant with more information.
-            print(
-                f"""\n{constants.BOLD}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, is a consonant.
-Consonants are speech sounds made with some or complete closure of the vocal tract.{constants.WHITE}"""
-            )
 
         # The vowel case when the user display type in lowercase is "simple."
         case "a" | "e" | "i" | "o" | "u" if user_display_type.lower() == "simple":
@@ -258,6 +203,23 @@ Vowels are speech sounds made with little to no closure of the vocal tract.{cons
             print(
                 f"""\n{constants.BOLD}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, is a semivowel.
 Semivowels are special speech sounds that share some characteristics of a vowel and a consonant.{constants.WHITE}"""
+            )
+
+        # Default cases must be consonants since the vowels and semivowels were covered.
+        # The default case when the user display type in lowercase is "simple."
+        case _ if user_display_type.lower() == "simple":
+            # Display to the user that their letter in uppercase is a consonant.
+            print(
+                f"\n{constants.LIGHT_PURPLE}The letter {user_letter.upper()} is a consonant.{constants.WHITE}"
+            )
+
+        # The default case when the user display type in lowercase is "complex."
+        case _ if user_display_type.lower() == "complex":
+            # Display to the user that their letter in uppercase
+            # is a consonant with more information.
+            print(
+                f"""\n{constants.BOLD}The letter {user_letter.upper()}, the {letter_place}{letter_place_suffix} letter of the English alphabet, is a consonant.
+Consonants are speech sounds made with some or complete closure of the vocal tract.{constants.WHITE}"""
             )
 
     # Set the corresponding index to the place of the letter
