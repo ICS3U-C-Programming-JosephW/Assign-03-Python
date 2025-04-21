@@ -46,7 +46,7 @@ Please enter a letter from a-z or A-Z.{constants.WHITE}\n"""
         # Get the desired display type from the user.
         user_display_type = input(
             f"""\n{constants.LIGHT_CYAN}Enter a display type for the letter.
-Choices are "simple" (less detailed answer), and "complex" (more detailed answer):{constants.WHITE}\n"""
+Choices are "simple" (less detailed answer), or "complex" (more detailed answer):{constants.WHITE}\n"""
         )
 
         # Check if the lowercase form of "simple"
@@ -61,7 +61,7 @@ Choices are "simple" (less detailed answer), and "complex" (more detailed answer
             # Display to the user that they must enter a valid choice.
             print(
                 f"""\n{constants.LIGHT_RED}{user_display_type} is not a valid choice.
-Please enter either simple or complex for the display type.{constants.WHITE}"""
+Please enter either "simple" or "complex" for the display type.{constants.WHITE}"""
             )
 
     # Construct an infinite while loop
@@ -71,7 +71,7 @@ Please enter either simple or complex for the display type.{constants.WHITE}"""
         # phonetic symbol for their desired letter.
         show_phonetic_symbol_str = input(
             f"""\n{constants.LIGHT_YELLOW}Do you want a phonetic symbol to be displayed for the sound your letter makes?
-Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
+Choices are 0 for "no" or 1 for "yes":{constants.WHITE}\n"""
         )
 
         # Try to validate and proceed with the
@@ -80,8 +80,8 @@ Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
             # Attempt to convert the entered string into an integer.
             show_phonetic_symbol_int = int(show_phonetic_symbol_str)
 
-            # Check if the user entered 0 for no
-            # or 1 for yes for the phonetic symbol.
+            # Check if the user entered 0 for "no"
+            # or 1 for "yes" for the phonetic symbol.
             if (show_phonetic_symbol_int == 0) or (show_phonetic_symbol_int == 1):
                 # Construct a nested infinite while loop
                 # for the phonetic example choice input.
@@ -90,7 +90,7 @@ Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
                     # phonetic word for their letter.
                     show_phonetic_example_str = input(
                         f"""\n{constants.LIGHT_BLUE}Do you want a phonetic word to be displayed as an example relating to your chosen letter?
-Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
+Choices are 0 for "no" or 1 for "yes":{constants.WHITE}\n"""
                     )
                     # Try to validate and proceed with the
                     # user's choice for a phonetic example.
@@ -98,8 +98,8 @@ Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
                         # Attempt to convert the entered string into an integer.
                         show_phonetic_example_int = int(show_phonetic_example_str)
 
-                        # Check if the user entered 0 for no
-                        # or 1 for yes for the phonetic example.
+                        # Check if the user entered 0 for "no"
+                        # or 1 for "yes" for the phonetic example.
                         if (show_phonetic_example_int == 0) or (
                             show_phonetic_example_int == 1
                         ):
@@ -108,11 +108,11 @@ Choices are 0 for no and 1 for yes:{constants.WHITE}\n"""
                         # Otherwise, the user entered an integer
                         # out of range for the example choice.
                         else:
-                            # Display to the user that they must enter 0 for no
-                            # or 1 for yes for the phonetic example.
+                            # Display to the user that they must enter 0 for "no"
+                            # or 1 for "yes" for the phonetic example.
                             print(
                                 f"""\n{constants.LIGHT_RED}{show_phonetic_example_int} is out of range for choices. 
-Please enter either 0 for no or 1 for yes.{constants.WHITE}"""
+Please enter either 0 for "no" or 1 for "yes."{constants.WHITE}"""
                             )
                     # Runs if int() could not convert the user's string
                     # input into an integer for the example choice.
@@ -128,11 +128,11 @@ Please enter a valid integer.{constants.WHITE}"""
             # Otherwise, the user entered an integer out of range
             # for the symbol choice.
             else:
-                # Display to the user that they must enter 0 for no
-                # or 1 for yes for the phonetic symbol.
+                # Display to the user that they must enter 0 for "no"
+                # or 1 for "yes" for the phonetic symbol.
                 print(
                     f"""\n{constants.LIGHT_RED}{show_phonetic_symbol_int} is out of range for choices.
-Please enter either 0 for no or 1 for yes.{constants.WHITE}"""
+Please enter either 0 for "no" or 1 for "yes."{constants.WHITE}"""
                 )
         # Runs if int() could not convert the user's string
         # input into an integer for the symbol choice.
